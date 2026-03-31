@@ -1,0 +1,24 @@
+{
+  "name": "diopodcasts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start-dev": "tsx src/server.ts",
+    "start-watch": "tsx watch src/server.ts",
+    "dist": "tsup src",
+    "start-dist": "npm run dist && node/server.js"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}
