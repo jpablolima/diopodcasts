@@ -1,6 +1,7 @@
 import * as http from  "http";
 import { IncomingMessage, ServerResponse } from "http";
 import { getListEpisodes, getFilterEpisodes } from  "./controllers/podcasts-controller";
+import {Routes} from "./routes/routes";
 
 
 const  server  = http.createServer( async (req:http.IncomingMessage, res:ServerResponse) => {
@@ -10,11 +11,11 @@ const  server  = http.createServer( async (req:http.IncomingMessage, res:ServerR
     console.log(baseUrl);
     console.log(queryString);
 
-    if (req.method ===  "GET" && baseUrl ===  "/api/list") {
+    if (req.method ===  "GET" && baseUrl === Routes.LIST) {
         await getListEpisodes(req, res);
     }
 
-    if (req.method === "GET" && baseUrl ===  "/api/episode"){
+    if (req.method === "GET" && baseUrl ===  Routes.EPISODE){
        await getFilterEpisodes(req, res);
     };
 });
