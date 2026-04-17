@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: dio-podcasts
+spec:
+    containers:
+        - name: node-app
+          image: dio-podcasts:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3333
